@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "neiron.ultimate.gui.MixinPanel",
+  "refmap": "mixins.mappetultimate.refmap.json",
+  "mixinPriority": 1000,
+  "mixins": [
+  ],
+  "client": [
+    "ScriptPanel"
+  ],
+  "server": [
+  ]
+}

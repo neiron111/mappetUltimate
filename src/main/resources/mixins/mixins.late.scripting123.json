@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "neiron.ultimate.scripting.mixins.late",
+  "refmap": "mixins.mappetultimate.refmap.json",
+  "mixinPriority": 1000,
+  "mixins": [
+    "MixinScriptPlayer",
+    "MixinScriptEvent"
+  ],
+  "client": [
+  ],
+  "server": [
+  ]
+}

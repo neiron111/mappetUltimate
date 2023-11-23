@@ -1,0 +1,11 @@
+#PARSE_ESCAPES
+
+# CONFIG
+mappetultimate.config.title=Mappet Ultimate
+
+mappetultimate.config.Mappet-Ultimate.title=Mappet Ultimate
+mappetultimate.config.Mappet-Ultimate.tooltip=Config Mappet Ultimate
+mappetultimate.config.Mappet-Ultimate.show_sharlay=Show Sharlay
+mappetultimate.config.comments.Mappet-Ultimate.show_sharlay=Adds a special comment to the script when creating)
+mappetultimate.config.Mappet-Ultimate.useShaudy=Off computer))))
+mappetultimate.config.comments.Mappet-Ultimate.use_shaudy=When you enable this setting, your computer crashing!))))
