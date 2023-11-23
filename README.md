@@ -9,4 +9,4 @@
 
 ## Special thanks
 
-Special thanks to [Minshtorm](https://github.com/Mishormik1), [McHorse](https://github.com/mchorse) for helping and supporting!
+Special thanks to [Minshtorm](https://github.com/Mishormik1) for helping and supporting!
