@@ -6,6 +6,9 @@
 
 **MappetUltimate** is a **1.12.2** addon for the mod [Mappet](https://github.com/mchorse/mappet/), focused on working with the client, and simplifying the scripting process.
 
+## Versions
+
+None information... Beta
 
 ## Special thanks
 
