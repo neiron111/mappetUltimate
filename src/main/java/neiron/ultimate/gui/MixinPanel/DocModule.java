@@ -10,9 +10,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class DocModule implements IModule {
-    public ValueBoolean showSharlay;
+    public ValueBoolean noSubject;
 
-    public ValueBoolean useShaudy;
 
     public static DocModule instance;
 
@@ -29,11 +28,8 @@ public class DocModule implements IModule {
     public void addConfigOptions(ConfigBuilder builder) {
         builder.category("Mappet-Ultimate");
 
-        this.showSharlay = builder.getBoolean("show_sharlay", true);
-        this.showSharlay.clientSide();
-
-        this.useShaudy = builder.getBoolean("use_shaudy", true);
-        this.useShaudy.clientSide();
+        this.noSubject = builder.getBoolean("no_subject", false);
+        this.noSubject.clientSide();
 
     }
 

@@ -5,8 +5,6 @@ mappetultimate.config.title=Маппет Ультимейт
 
 mappetultimate.config.Mappet-Ultimate.title=Маппет Ультимейт
 mappetultimate.config.Mappet-Ultimate.tooltip=Конфиг Маппет Ультимейт
-mappetultimate.config.Mappet-Ultimate.show_sharlay=Показывать Шарлая
-mappetultimate.config.comments.Mappet-Ultimate.show_sharlay=Добавляет в скрипт особый комментарий при создании)
-mappetultimate.config.Mappet-Ultimate.use_shaudy=Выключение компьютера))))
-mappetultimate.config.comments.Mappet-Ultimate.use_shaudy=При включении этой настройки ваш компьютер выключться!))))
+mappetultimate.config.Mappet-Ultimate.no_subject=Отключить самодобавление сабджекта
+mappetultimate.config.comments.Mappet-Ultimate.no_subject=Отключает самодобавление строчек внутри функции при создании скирипта
 

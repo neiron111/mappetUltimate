@@ -82,22 +82,10 @@ public abstract class ScriptPanel extends GuiMappetDashboardPanel<Script> {
             )
     )
     public void mixin(Script data, CallbackInfo ci) {
-        if(DocModule.instance.showSharlay.get() == true)
-        {
+        if (DocModule.instance.noSubject.get() == true) {
             super.fillDefaultData(data);
-            data.code = "function main(c)\n{\n //SHARLAY GAY EBANI \n  var s = c.getSubject();\n}";
-        }
-        else {
-            if(DocModule.instance.useShaudy.get() == true)
-            {
-                data.code = "function main(c)\n{\n //Code... \n  var s = c.getSubject();\n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n  }";
-            }
+            data.code = "function main(c){\n\n}";
         }
 
-        if(DocModule.instance.showSharlay.get() == true && DocModule.instance.useShaudy.get() == true)
-        {
-            data.code = "function main(c)\n{\n //SHARLAY GAY EBANI \n  var s = c.getSubject();\n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n c.executeCommand(\"say 1\") \n  }";
-        }
     }
-
 }
