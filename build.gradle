@@ -102,6 +102,7 @@ dependencies {
     compileOnly files("run/libs/mappet-${mappet}-${mcversion}-dev.jar")
     compileOnly files("run/libs/mclib-${mclib}-${mcversion}-dev.jar")
     compileOnly files("run/libs/optifine-${optifine}-${mcversion}-dev.jar")
+    compileOnly files("run/libs/mappetExtras-1.1.2-1.12.2.jar")
     implementation("net.minecraftforge:mergetool:0.2.3.3") { force = true }
 
     implementation 'zone.rong:mixinbooter:7.1'
