@@ -44,7 +44,8 @@ def mixins = new ArrayList<>(Arrays.asList(
 
 def mixinFiles = new ArrayList<>(Arrays.asList(
         'mixins/mixins.late.scripting123.json',
-        'mixins/mixins.early.scripting123.json'
+        'mixins/mixins.early.scripting123.json',
+        'mixins/mixins.late.documentation.json'
 ))
 
 mixinFiles.forEach {

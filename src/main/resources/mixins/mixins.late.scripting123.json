@@ -5,9 +5,9 @@
   "refmap": "mixins.mappetultimate.refmap.json",
   "mixinPriority": 1000,
   "mixins": [
-    "MixinScriptPlayer",
-    "MixinScriptEvent",
-    "MixinMath"
+    "IUltimatePlayer",
+    "IUltimateEvent",
+    "IUltimateMath"
   ],
   "client": [
   ],

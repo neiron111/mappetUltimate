@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "neiron.ultimate.documentation.mixins.late.documentation",
+  "refmap": "mixins.mappetultimate.refmap.json",
+  "mixinPriority": 1000,
+  "mixins": [
+    "MixinDocClass",
+    "MixinDocMethod"
+  ],
+  "client": [
+    "MixinDocEntry",
+    "MixinDocMerger",
+    "MixinGuiDocumentationOverlayPanel",
+    "MixinGuiDocumentationOverlayPanelAccessor",
+    "MixinGuiScriptPanel"
+  ],
+  "server": [
+  ]
+}
