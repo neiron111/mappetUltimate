@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import neiron.ultimate.network.Dispatcher;
 
 public class CommonProxy {
+
     public CommonProxy() {
     }
     public void preInit(FMLPreInitializationEvent event) {

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(value = ScriptEvent.class, remap = false)
 @MixinTargetName("mchorse.mappet.api.scripts.user.IScriptEvent")
-public abstract class MixinScriptEvent {
+public abstract class IUltimateEvent {
     public IScriptUltimate getUltimate() {
         return new ScriptUltimate();
     }

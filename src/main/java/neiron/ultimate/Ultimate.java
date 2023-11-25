@@ -4,6 +4,7 @@ import mchorse.mclib.McLib;
 import mchorse.mclib.config.ConfigBuilder;
 import mchorse.mclib.config.ConfigManager;
 import mchorse.mclib.events.RegisterConfigEvent;
+import neiron.ultimate.documentation.DocumModule;
 import neiron.ultimate.gui.MixinPanel.DocModule;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -40,7 +41,7 @@ public class Ultimate {
 
     public static final Logger logger = LogManager.getLogger(MOD_ID);
 
-    public static final int mainColor = 0xFFAA00;
+    public static final int mainColor = 0x41376e;
 
     public ConfigManager configs;
 
@@ -52,6 +53,7 @@ public class Ultimate {
 
     public static final List<IModule> modules = new ArrayList<>(Arrays.asList(
         ScriptingModule.getInstance(),
+        DocumModule.getInstance(),
         DocModule.getInstance()
     ));
 
