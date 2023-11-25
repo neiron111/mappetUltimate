@@ -18,3 +18,4 @@
       методы `gameStop`, `getDate`, `keyRealise`, `saveScreenshot`
     * Также методы для `IUltimatePlayer`:
       * `getShaderPack`, `setLocalMorph`
+    * И рофлянки и тесты для `IScriptUltimate`, `IUltimateEvent`
