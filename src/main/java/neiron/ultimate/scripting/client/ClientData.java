@@ -3,19 +3,13 @@ package neiron.ultimate.scripting.client;
 import net.minecraft.nbt.NBTTagCompound;
 
 public enum ClientData {
-    GETDATE {
+    DATE {
         public Object process(NBTTagCompound data) {
             return data.getString(this.name());
         }
     },
 
     SHADER {
-        public Object process(NBTTagCompound data) {
-            return data.getString(this.name());
-        }
-    },
-
-    STOP {
         public Object process(NBTTagCompound data) {
             return data.getString(this.name());
         }

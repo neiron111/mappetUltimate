@@ -93,10 +93,8 @@ public class PacketClientData implements IMessage {
             switch(typeEnum) {
                 case SCREEN:
                     return new ScreenProvider();
-                case GETDATE:
-                    return new GetdateProvider();
-                case STOP:
-                    return new StopProvider();
+                case DATE:
+                    return new DateProvider();
                 case SHADER:
                     return new ShaderProvider();
             }

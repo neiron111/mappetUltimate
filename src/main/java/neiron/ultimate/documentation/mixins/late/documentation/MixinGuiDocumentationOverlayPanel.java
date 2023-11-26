@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import neiron.ultimate.documentation.mixins.late.documentation.MixinGuiDocumentationOverlayPanelAccessor;
+import toraylife.mappetextras.modules.main.mixins.late.documentation.MixinGuiDocumentationOverlayPanelAccessor;
 
 @Mixin(value = GuiDocumentationOverlayPanel.class, remap = false)
 public class MixinGuiDocumentationOverlayPanel {
