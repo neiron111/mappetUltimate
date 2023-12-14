@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.scripts.GuiDocumentationOverlayPanel;
 import mchorse.mappet.client.gui.scripts.utils.documentation.Docs;

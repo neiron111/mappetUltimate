@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.scripts.GuiDocumentationOverlayPanel;
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocList;
@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import toraylife.mappetextras.modules.main.mixins.late.documentation.MixinGuiDocumentationOverlayPanelAccessor;
 
 @Mixin(value = GuiDocumentationOverlayPanel.class, remap = false)
 public class MixinGuiDocumentationOverlayPanel {

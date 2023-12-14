@@ -4,7 +4,7 @@ import mchorse.mclib.config.ConfigBuilder;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import neiron.ultimate.IModule;
+import neiron.ultimate.utils.IModule;
 import neiron.ultimate.Ultimate;
 
 public class ClientModule implements IModule {

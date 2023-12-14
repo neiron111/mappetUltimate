@@ -1,5 +1,6 @@
 package neiron.ultimate;
 
+import neiron.ultimate.utils.IModule;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 import java.util.List;

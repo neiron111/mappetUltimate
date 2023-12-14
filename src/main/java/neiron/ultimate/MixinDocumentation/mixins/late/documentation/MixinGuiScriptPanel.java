@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.panels.GuiScriptPanel;
 import org.spongepowered.asm.mixin.Mixin;

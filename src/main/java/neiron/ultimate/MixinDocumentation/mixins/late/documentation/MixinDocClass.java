@@ -1,10 +1,10 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocClass;
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocMethod;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import neiron.ultimate.documentation.mixins.utils.PreciseDocClass;
+import neiron.ultimate.MixinDocumentation.mixins.utils.PreciseDocClass;
 
 import java.util.List;
 

@@ -4,8 +4,10 @@ import mchorse.mclib.McLib;
 import mchorse.mclib.config.ConfigBuilder;
 import mchorse.mclib.config.ConfigManager;
 import mchorse.mclib.events.RegisterConfigEvent;
-import neiron.ultimate.documentation.DocumModule;
-import neiron.ultimate.gui.MixinPanel.DocModule;
+import neiron.ultimate.MixinDocumentation.DocumModule;
+import neiron.ultimate.MixinScriptPanel.PanelModule;
+import neiron.ultimate.network.proxy.CommonProxy;
+import neiron.ultimate.utils.IModule;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -48,13 +50,13 @@ public class Ultimate {
     @Mod.Instance
     public static Ultimate instance;
 
-    @SidedProxy(serverSide = "neiron.ultimate.CommonProxy", clientSide = "neiron.ultimate.ClientProxy")
+    @SidedProxy(serverSide = "neiron.ultimate.network.proxy.CommonProxy", clientSide = "neiron.ultimate.network.proxy.ClientProxy")
     public static CommonProxy proxy;
 
     public static final List<IModule> modules = new ArrayList<>(Arrays.asList(
         ScriptingModule.getInstance(),
         DocumModule.getInstance(),
-        DocModule.getInstance()
+        PanelModule.getInstance()
     ));
 
     @SubscribeEvent

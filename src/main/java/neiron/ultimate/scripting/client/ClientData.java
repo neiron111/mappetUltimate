@@ -14,7 +14,16 @@ public enum ClientData {
             return data.getString(this.name());
         }
     },
-
+    KEY {
+        public Object process(NBTTagCompound data) {
+            return data.getString(this.name());
+        }
+    },
+    RKEY {
+        public Object process(NBTTagCompound data) {
+            return data.getString(this.name());
+        }
+    },
     SCREEN {
         public Object process(NBTTagCompound data) {
             return data.getString(this.name());

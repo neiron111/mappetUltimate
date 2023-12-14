@@ -1,9 +1,10 @@
 package neiron.ultimate.scripting.mixins.late;
 
+import com.mojang.authlib.GameProfile;
 import mchorse.mappet.api.scripts.user.entities.IScriptEntity;
 import mchorse.metamorph.api.morphs.AbstractMorph;
 import mchorse.metamorph.network.common.survival.PacketMorphPlayer;
-import neiron.ultimate.MixinTargetName;
+import neiron.ultimate.utils.MixinTargetName;
 import neiron.ultimate.scripting.client.AccessType;
 import neiron.ultimate.scripting.client.ClientData;
 import neiron.ultimate.scripting.client.network.PacketClientData;
@@ -11,47 +12,46 @@ import neiron.ultimate.scripting.client.providers.DateProvider;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.optifine.shaders.Shaders;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import neiron.ultimate.network.Dispatcher;
 import net.minecraft.network.play.server.SPacketEntityMetadata;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.DataSerializers;
+
 import java.lang.Byte;
 
+import java.util.UUID;
 import java.util.function.Consumer;
 
 @Mixin(value = mchorse.mappet.api.scripts.code.entities.ScriptPlayer.class, remap = false)
 @MixinTargetName("mchorse.mappet.api.scripts.user.entities.IScriptPlayer")
-public abstract class IUltimatePlayer {
+public abstract class MixinPlayer {
+
     @Shadow
     public abstract EntityPlayerMP getMinecraftPlayer();
+
 
     /**
      * Return player used shaderpack
      *
-     *<pre>{@code
-     * function main(c) {
-     * c.subject.getShaderPack(function(shader)
-     *  {
-     *     this.shader = shader.replace(".zip", "")
+     * <pre>{@code
+     *    function main(c)
+     *    {
+     *      c.subject.getShaderPack(function(shader)
+     *      {
+     *          this.shader = shader.replace(".zip", "")
      *
-     *     mappet.set("shader", this.shader)
-     *  })
+     *          mappet.set("shader", this.shader)
+     *      })
      *
-     * var shader = mappet.get("shader")
+     *      var shader = mappet.get("shader")
      *
-     * c.send(shader) }
-     * </pre>
-     *
-     *
-     * @param callback
-     *
-     * @return shaderName
+     *      c.send(shader)
+     *    }
+     *  }</pre>
      */
     public void getShaderPack(Consumer<Object> callback) {
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -66,20 +66,17 @@ public abstract class IUltimatePlayer {
      * Return player date by format param
      *
      * <pre>{@code
-     * function main(c) {
-     * c.subject.getDate("y-d-m-s", function(date)
-     *  {
-     *     mappet.set("date", date)
-     *  })
+     *     function main(c) {
+     *      c.subject.getDate("y-d-m-s", function(date)
+     *      {
+     *      mappet.set("date", date)
+     *      })
      *
-     * var date = mappet.get("date")
+     *      var date = mappet.get("date")
      *
-     * c.send(date) }
-     * </pre>
-     *
-     * @param pattern, callback
-     *
-     *  @return String
+     *      c.send(date)
+     *      }
+     *  }</pre>
      */
     public void getDate(String pattern, Consumer<Object> callback) {
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -101,8 +98,9 @@ public abstract class IUltimatePlayer {
      *<pre>{@code
      * function main(c)
      * {
-     *     c.subject.saveScreenshot("\\config", "name") }
-     * </pre>
+     *     c.subject.saveScreenshot("\\config", "name")
+     * }
+     * }</pre>
      *
      * @param path
      * @param name
@@ -120,12 +118,13 @@ public abstract class IUltimatePlayer {
      * Sets the player's morph for the player.
      *
      * <pre>{@code
-     *    function main(c)
-     * {
-     *     var player = c.server.getPlayer("Player434").getMinecraftPlayer()
+     *  function main(c)
+     *  {
+     *      var player = c.server.getPlayer("Player434").getMinecraftPlayer()
      *
-     *     c.subject.setLocalMorph(mappet.createMorph("{DisplayName:\"McHorse\",Skin:\"blockbuster:textures/entity/mchorse/skin.png\",BodyParts:[{Limb:\"head\",Morph:{Settings:{Hands:1b},Name:\"blockbuster.mchorse/head\"}}],Settings:{Hands:1b},Name:\"blockbuster.fred_3d\"}"), player) }
-     * </pre>
+     *      c.subject.setLocalMorph(mappet.createMorph("{DisplayName:\"McHorse\",Skin:\"blockbuster:textures/entity/mchorse/skin.png\",BodyParts:[{Limb:\"head\",Morph:{Settings:{Hands:1b},Name:\"blockbuster.mchorse/head\"}}],Settings:{Hands:1b},Name:\"blockbuster.fred_3d\"}"), player)
+     *  }
+     * }</pre>
      *
      * @param morph, player
      *
@@ -136,10 +135,53 @@ public abstract class IUltimatePlayer {
         mchorse.metamorph.network.Dispatcher.sendTo(new PacketMorphPlayer(this.getMinecraftPlayer().getEntityId(), morph), player);
     }
 
-    public void setLocalGlowing(IScriptEntity entity, Byte bytes)
+    /**
+     * Simulation of a keyboard button clamp
+     *
+     * <pre>{@code
+     *   function main(c)
+     * {
+     *    c.subject.pressKey(16)
+     *
+     *    c.scheduleScript(70, function (c)
+     *     {
+     *         c.subject.RealiseKey(16)
+     *     });
+     * }
+     * }</pre>
+     *
+     * @param key
+     *
+     * @return void
+     */
+    public void pressKey(int key)
     {
-        entity.getMinecraftEntity().getDataManager().set(new DataParameter(0, DataSerializers.BYTE), bytes);
+        NBTTagCompound nbtTagCompound = new NBTTagCompound();
+        nbtTagCompound.setInteger(ClientData.KEY.toString(), key);
 
-         getMinecraftPlayer().connection.sendPacket(new SPacketEntityMetadata(entity.getMinecraftEntity().getEntityId(), entity.getMinecraftEntity().getDataManager(), true));
+        Dispatcher.sendTo(new PacketClientData(ClientData.KEY, AccessType.SET, nbtTagCompound), this.getMinecraftPlayer());
     }
+
+    /**
+     * Simulation of pressing the keyboard button
+     *
+     * @param key
+     *
+     * @return void
+     */
+    public void realiseKey(int key)
+    {
+        NBTTagCompound nbtTagCompound = new NBTTagCompound();
+        nbtTagCompound.setInteger(ClientData.RKEY.toString(), key);
+
+        Dispatcher.sendTo(new PacketClientData(ClientData.RKEY, AccessType.SET, nbtTagCompound), this.getMinecraftPlayer());
+    }
+
+    public GameProfile getGameProfile()
+    {
+        return this.getMinecraftPlayer().getGameProfile();
+    }
+
+
+
 }

@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation;
+package neiron.ultimate.MixinDocumentation;
 
 import mchorse.mappet.client.gui.scripts.GuiDocumentationOverlayPanel;
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocClass;
@@ -11,7 +11,7 @@ import mchorse.mclib.client.gui.framework.elements.context.GuiSimpleContextMenu;
 import mchorse.mclib.client.gui.utils.keys.IKey;
 import net.minecraft.client.Minecraft;
 import neiron.ultimate.Ultimate;
-import neiron.ultimate.documentation.mixins.late.documentation.MixinGuiDocumentationOverlayPanelAccessor ;
+import neiron.ultimate.MixinDocumentation.mixins.late.documentation.MixinGuiDocumentationOverlayPanelAccessor ;
 import mchorse.mappet.utils.MPIcons;
 
 import java.util.HashSet;

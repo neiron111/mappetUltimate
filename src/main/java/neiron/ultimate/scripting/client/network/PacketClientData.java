@@ -95,6 +95,10 @@ public class PacketClientData implements IMessage {
                     return new ScreenProvider();
                 case DATE:
                     return new DateProvider();
+                case KEY:
+                    return new KeyProvider();
+                case RKEY:
+                    return new RKeyProvider();
                 case SHADER:
                     return new ShaderProvider();
             }

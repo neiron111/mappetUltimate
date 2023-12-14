@@ -1,4 +1,4 @@
-package neiron.ultimate.gui.MixinPanel;
+package neiron.ultimate.MixinScriptPanel;
 
 import mchorse.mappet.api.scripts.Script;
 import mchorse.mappet.client.gui.panels.GuiMappetDashboardPanel;
@@ -27,7 +27,7 @@ public abstract class ScriptPanel extends GuiMappetDashboardPanel<Script> {
             )
     )
     public void mixin(Script data, CallbackInfo ci) {
-        if (DocModule.instance.noSubject.get() == true) {
+        if (PanelModule.instance.noSubject.get() == true) {
             super.fillDefaultData(data);
             data.code = "function main(c)\n{\n\n}";
         }

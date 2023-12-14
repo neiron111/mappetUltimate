@@ -5,8 +5,10 @@
   "refmap": "mixins.mappetultimate.refmap.json",
   "mixinPriority": 1000,
   "mixins": [
-    "IUltimatePlayer",
-    "IUltimateEvent"
+    "MixinPlayer",
+    "MixinEvent",
+    "MixinFactory",
+    "MixinServer"
   ],
   "client": [
   ],

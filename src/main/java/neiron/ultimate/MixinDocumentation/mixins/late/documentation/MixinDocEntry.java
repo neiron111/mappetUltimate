@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocEntry;
 import mchorse.mappet.client.gui.utils.text.GuiText;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import neiron.ultimate.documentation.ClassLinkManager;
+import neiron.ultimate.MixinDocumentation.ClassLinkManager;
 
 
 @Mixin(value = DocEntry.class, remap = false)

@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import mchorse.mappet.client.gui.scripts.utils.documentation.DocMethod;
 import mchorse.mappet.client.gui.utils.text.GuiText;
@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import neiron.ultimate.documentation.ClassLinkManager ;
+import neiron.ultimate.MixinDocumentation.ClassLinkManager ;
 
 @Mixin(value = DocMethod.class, remap = false)
 public class MixinDocMethod {

@@ -1,5 +1,6 @@
-package neiron.ultimate;
+package neiron.ultimate.network.proxy;
 
+import neiron.ultimate.Ultimate;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

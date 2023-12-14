@@ -1,4 +1,4 @@
-package neiron.ultimate;
+package neiron.ultimate.utils;
 
 import mchorse.mclib.config.ConfigBuilder;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

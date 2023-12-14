@@ -1,10 +1,8 @@
-package neiron.ultimate.documentation;
+package neiron.ultimate.MixinDocumentation;
 
 
 import mchorse.mclib.config.ConfigBuilder;
-import mchorse.mclib.config.values.ValueBoolean;
-import mchorse.mclib.config.values.ValueInt;
-import neiron.ultimate.IModule;
+import neiron.ultimate.utils.IModule;
 import neiron.ultimate.Ultimate;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

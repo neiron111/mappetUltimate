@@ -28,6 +28,7 @@ public class ScreenProvider implements IClientDataProvider {
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
         Date date = new Date();
         BufferedImage screenShot = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));

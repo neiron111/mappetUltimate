@@ -2,7 +2,7 @@ package neiron.ultimate.scripting;
 
 import mchorse.mclib.config.ConfigBuilder;
 import neiron.ultimate.Ultimate;
-import neiron.ultimate.IModule;
+import neiron.ultimate.utils.IModule;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

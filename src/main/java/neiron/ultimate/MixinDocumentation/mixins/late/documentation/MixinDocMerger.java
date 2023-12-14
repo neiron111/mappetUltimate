@@ -1,4 +1,4 @@
-package neiron.ultimate.documentation.mixins.late.documentation;
+package neiron.ultimate.MixinDocumentation.mixins.late.documentation;
 
 import com.google.gson.Gson;
 import mchorse.mappet.client.gui.scripts.GuiDocumentationOverlayPanel;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import neiron.ultimate.documentation.mixins.utils.PreciseDocClass ;
+import neiron.ultimate.MixinDocumentation.mixins.utils.PreciseDocClass ;
 
 import java.io.InputStream;
 import java.util.Collections;

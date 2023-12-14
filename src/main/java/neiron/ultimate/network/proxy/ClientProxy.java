@@ -1,4 +1,4 @@
-package neiron.ultimate;
+package neiron.ultimate.network.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
