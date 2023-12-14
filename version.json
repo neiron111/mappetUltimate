@@ -1,7 +1,8 @@
 {
     "homepage": "https://github.com/neiron111/mappetUltimate",
     "1.12.2": {
-      "0.0.1": "Initial version, test github actions"
+      "0.0.1": "Initial version, test github actions",
+      "0.0.2": ""
     },
     "promos": {
       "1.12.2-latest": "0.0.1",
