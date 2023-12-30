@@ -7,3 +7,6 @@ mappetultimate.config.Mappet-Ultimate.title=Mappet Ultimate
 mappetultimate.config.Mappet-Ultimate.tooltip=Config Mappet Ultimate
 mappetultimate.config.Mappet-Ultimate.no_subject=Off auto subject
 mappetultimate.config.comments.Mappet-Ultimate.no_subject=Off auto add strings in main function when creating a script
+mappetultimate.config.Mappet-Ultimate.editor_button=Change text
+mappetultimate.config.Mappet-Ultimate.editor.main=Editor auto-add code
+mappetultimate.config.Mappet-Ultimate.editor.save=Save changes

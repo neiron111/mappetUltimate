@@ -4,12 +4,12 @@
   "description": "An add-on for Mappet that adds new methods for working with the client",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://s-109.edusite.ru/",
-  "updateJSON": "IDI NAHUI SUKA https://rt.pornhub.com/",
+  "url": "https://github.com/neiron111/mappetUltimate",
+  "updateJSON": "https://github.com/neiron111/mappetUltimate/blob/0.0.2/CHANGELOG.md",
   "authorList": [
     "Neiron"
   ],
-  "credits": "Special thanks to the creators of MappetExtras for supporting!",
+  "credits": "Special thanks to the creators of MappetExtras!",
   "logoFile": "logo.png",
   "useDependencyInformation": true,
   "requiredMods": [

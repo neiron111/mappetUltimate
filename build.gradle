@@ -43,10 +43,10 @@ def mixins = new ArrayList<>(Arrays.asList(
 ))
 
 def mixinFiles = new ArrayList<>(Arrays.asList(
-        'mixins/mixins.late.scripting123.json',
-        'mixins/mixins.early.scripting123.json',
+        'mixins/mixins.late.script.json',
         'mixins/mixins.late.documentation.json',
-        'mixins/mixins.late.scriptpanel.json'
+        'mixins/mixins.late.scriptpanel.json',
+        'mixins/mixins.late.theme.json'
 ))
 
 mixinFiles.forEach {
@@ -247,13 +247,10 @@ task scriptingJavadocsJson(type: Exec) {
     // Rename it to jsonDoclet.jar, and place it in the run/ folder
     executable "javadoc"
     List<String> subpackages = new ArrayList(Arrays.asList(
-            "neiron.ultimate.scripting.scripts.user",
-            "neiron.ultimate.modules.client.scripts.user",
             "neiron.ultimate.scripting.mixins.late",
-            "neiron.ultimate.modules.client.mixins.late",
+            "neiron.ultimate.scripting.scripts.code"
     ))
     List<String> excluded = new ArrayList(Arrays.asList(
-            "neiron.ultimate.scripting.mixins.utils"
     ))
     args "-doclet", "mchorse.utils.doclets.JsonDoclet", "-docletpath", "./run/jsonDoclet.jar", "-sourcepath", "./src/main/java",
             "-subpackages", subpackages.join(":"),

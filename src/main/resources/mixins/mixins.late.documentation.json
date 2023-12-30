@@ -1,7 +1,7 @@
 {
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "package": "neiron.ultimate.MixinDocumentation.mixins.late.documentation",
+  "package": "neiron.ultimate.mixins.documentation.mixin.late",
   "refmap": "mixins.mappetultimate.refmap.json",
   "mixinPriority": 1000,
   "mixins": [

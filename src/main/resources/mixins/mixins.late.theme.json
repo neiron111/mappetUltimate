@@ -1,13 +1,14 @@
 {
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "package": "neiron.ultimate.mixins.scriptpanel.mixin",
+  "package": "neiron.ultimate.mixins.theme.mixin",
   "refmap": "mixins.mappetultimate.refmap.json",
   "mixinPriority": 1000,
   "mixins": [
+    "MixinGuiTheme",
+    "MixinSyntaxStyle"
   ],
   "client": [
-    "ScriptPanel"
   ],
   "server": [
   ]

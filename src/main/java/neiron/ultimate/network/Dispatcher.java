@@ -2,12 +2,9 @@ package neiron.ultimate.network;
 
 import java.util.Iterator;
 
-import mchorse.mappet.network.common.content.PacketServerSettings;
-import mchorse.mappet.network.common.scripts.PacketClick;
-import mchorse.mappet.network.server.scripts.ServerHandlerClick;
 import mchorse.mclib.network.AbstractDispatcher;
 import neiron.ultimate.Ultimate;
-import neiron.ultimate.scripting.client.network.PacketClientData;
+import neiron.ultimate.client.network.PacketClientData;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityTracker;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,27 +1,19 @@
 package neiron.ultimate.scripting.mixins.late;
 
 import com.mojang.authlib.GameProfile;
-import mchorse.mappet.api.scripts.user.entities.IScriptEntity;
 import mchorse.metamorph.api.morphs.AbstractMorph;
 import mchorse.metamorph.network.common.survival.PacketMorphPlayer;
 import neiron.ultimate.utils.MixinTargetName;
-import neiron.ultimate.scripting.client.AccessType;
-import neiron.ultimate.scripting.client.ClientData;
-import neiron.ultimate.scripting.client.network.PacketClientData;
-import neiron.ultimate.scripting.client.providers.DateProvider;
+import neiron.ultimate.client.AccessType;
+import neiron.ultimate.client.ClientData;
+import neiron.ultimate.client.network.PacketClientData;
+import neiron.ultimate.client.providers.DateProvider;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.optifine.shaders.Shaders;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import neiron.ultimate.network.Dispatcher;
-import net.minecraft.network.play.server.SPacketEntityMetadata;
-import net.minecraft.network.datasync.DataSerializers;
-
-import java.lang.Byte;
 
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -32,6 +24,7 @@ public abstract class MixinPlayer {
 
     @Shadow
     public abstract EntityPlayerMP getMinecraftPlayer();
+
 
 
     /**
@@ -177,11 +170,38 @@ public abstract class MixinPlayer {
         Dispatcher.sendTo(new PacketClientData(ClientData.RKEY, AccessType.SET, nbtTagCompound), this.getMinecraftPlayer());
     }
 
+    /**
+     * HUI
+     *
+     <pre>{@code
+     *   function main(c)
+     * {
+     *    MINSHTORM GAY
+     * }
+     * }</pre>
+     *
+     * @return GameProfile
+     */
     public GameProfile getGameProfile()
     {
-        return this.getMinecraftPlayer().getGameProfile();
+        return getMinecraftPlayer().getGameProfile();
     }
 
-
+    /**
+     * HUI
+     *
+     <pre>{@code
+     *   function main(c)
+     * {
+     *    MINSHTORM GAY
+     * }
+     * }</pre>
+     *
+     * @return GameProfile
+     */
+    public UUID getOfflineUUID(String name)
+    {
+        return EntityPlayerMP.getOfflineUUID(name);
+    }
 
 }

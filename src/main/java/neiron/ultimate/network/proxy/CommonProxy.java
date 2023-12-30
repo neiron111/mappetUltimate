@@ -14,14 +14,14 @@ public class CommonProxy {
     }
     public void preInit(FMLPreInitializationEvent event) {
         Dispatcher.register();
-        Ultimate.modules.forEach(module -> module.preInit(event));
+        Ultimate.features.forEach(module -> module.preInit(event));
     }
 
     public void init(FMLInitializationEvent event) {
-        Ultimate.modules.forEach(module -> module.init(event));
+        Ultimate.features.forEach(module -> module.init(event));
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-        Ultimate.modules.forEach(module -> module.postInit(event));
+        Ultimate.features.forEach(module -> module.postInit(event));
     }
 }

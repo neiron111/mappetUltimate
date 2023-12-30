@@ -4,10 +4,11 @@ import mchorse.mclib.McLib;
 import mchorse.mclib.config.ConfigBuilder;
 import mchorse.mclib.config.ConfigManager;
 import mchorse.mclib.events.RegisterConfigEvent;
-import neiron.ultimate.MixinDocumentation.DocumModule;
-import neiron.ultimate.MixinScriptPanel.PanelModule;
+import neiron.ultimate.mixins.documentation.Documentation;
+import neiron.ultimate.mixins.scriptpanel.AutoCodeInject;
+import neiron.ultimate.mixins.theme.ThemeFix;
 import neiron.ultimate.network.proxy.CommonProxy;
-import neiron.ultimate.utils.IModule;
+import neiron.ultimate.utils.IFeatures;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -17,9 +18,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import neiron.ultimate.scripting.ScriptingModule;
+import neiron.ultimate.scripting.Scripting;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,6 +41,8 @@ public class Ultimate {
     public Ultimate() {
 
     }
+
+    public static final File configFolder = Loader.instance().getConfigDir();
     public static final String MOD_ID = "mappetultimate";
     public static final String NAME = "MappetUltimate";
 
@@ -53,17 +60,18 @@ public class Ultimate {
     @SidedProxy(serverSide = "neiron.ultimate.network.proxy.CommonProxy", clientSide = "neiron.ultimate.network.proxy.ClientProxy")
     public static CommonProxy proxy;
 
-    public static final List<IModule> modules = new ArrayList<>(Arrays.asList(
-        ScriptingModule.getInstance(),
-        DocumModule.getInstance(),
-        PanelModule.getInstance()
+    public static final List<IFeatures> features = new ArrayList<>(Arrays.asList(
+        Scripting.getInstance(),
+        Documentation.getInstance(),
+        AutoCodeInject.getInstance(),
+        ThemeFix.getInstance()
     ));
 
     @SubscribeEvent
     public void onConfigRegister(RegisterConfigEvent event) {
         ConfigBuilder builder = event.createBuilder(MOD_ID);
 
-        modules.forEach(module -> module.addConfigOptions(builder));
+        features.forEach(feature -> feature.addConfigOptions(builder));
     }
 
     @Mod.EventHandler
@@ -77,6 +85,28 @@ public class Ultimate {
         configFolder.mkdir();
 
         this.configs.register(configFolder);
+
+
+        if(!Paths.get(".\\config\\mappetultimate").resolve("script.json").toFile().exists()) {
+            try {
+                Files.createFile(Paths.get(".\\config\\mappetultimate").resolve("script.json"));
+
+                Files.write(Paths.get(".\\config\\mappetultimate").resolve("script.json"), "function main(c)\n{\n    // Code...\n    var s = c.getSubject();\n}".getBytes(StandardCharsets.UTF_8));
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        if(!Paths.get(".\\config\\mappetultimate").resolve("theme.json").toFile().exists())
+        {
+            try {
+            Files.createFile(Paths.get(".\\config\\mappetultimate").resolve("theme.json"));
+            Files.write(Paths.get(".\\config\\mappetultimate").resolve("theme.json"), "monokai.json".getBytes(StandardCharsets.UTF_8));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
         proxy.preInit(event);
     }

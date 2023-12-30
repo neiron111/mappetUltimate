@@ -5,6 +5,15 @@ mappetultimate.config.title=Маппет Ультимейт
 
 mappetultimate.config.Mappet-Ultimate.title=Маппет Ультимейт
 mappetultimate.config.Mappet-Ultimate.tooltip=Конфиг Маппет Ультимейт
-mappetultimate.config.Mappet-Ultimate.no_subject=Отключить самодобавление сабджекта
-mappetultimate.config.comments.Mappet-Ultimate.no_subject=Отключает самодобавление строчек внутри функции при создании скирипта
+mappetultimate.config.Mappet-Ultimate.editor_button=Редактор текста
+mappetultimate.config.comments.Mappet-Ultimate.PanelButton=Измените свой текст, но не забудьте сохранить!
+mappetultimate.config.Mappet-Ultimate.editor.main=Редактор авто-добавления кода
+mappetultimate.config.Mappet-Ultimate.editor.save=Сохранить изменения
+mappetultimate.config.Mappet-Ultimate.customTextButton=Свой начальный код
+mappetultimate.config.comments.Mappet-Ultimate.customTextButton=Можете изменить его в редакторе
+mappetultimate.config.Mappet-Ultimate.themeFile=Название вашей темы
+mappetultimate.config.comments.Mappet-Ultimate.themeFile=Укажите название вашей темы для её починки
+mappetultimate.config.Mappet-Ultimate.editor.context.return=Вернуть текст
+mappetultimate.config.Mappet-Ultimate.editor.context.save=Сохранить
+
 
